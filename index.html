@@ -1,0 +1,808 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>10 Anos · Laboratório Micaele Tani</title>
+<meta name="description" content="Confirme sua presença na comemoração de 10 anos do Laboratório Micaele Tani. Sábado, 07/11, às 19h, no Salão Mãos Amigas.">
+<meta name="theme-color" content="#0B2A5E">
+<meta property="og:title" content="Comemoração 10 Anos · Laboratório Micaele Tani">
+<meta property="og:description" content="Sábado, 07/11, às 19h · Salão Mãos Amigas. Confirme sua presença!">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23F7F5F0' stroke='%230B2A5E' stroke-width='4'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='26' fill='%230B2A5E'%3EMI%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Great+Vibes&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B2A5E;
+    --navy-deep:#061B40;
+    --navy-soft:#1E3F7A;
+    --gold:#C49A4A;
+    --gold-light:#E6C882;
+    --paper:#F7F5F0;
+    --card:#FFFFFF;
+    --ink:#0B2A5E;
+    --muted:#5A6B8C;
+    --line:rgba(11,42,94,.18);
+    --error:#B3261E;
+    --blue-1:#015C91; --blue-2:#2C82B5; --blue-3:#88CDF6; --blue-4:#BCE5FF;
+    --sand-1:#B0946C; --sand-2:#D1B58D; --sand-3:#E4D3BF;
+    --safe-b:env(safe-area-inset-bottom,0px);
+  }
+
+  /* =========================================================
+     BASE = CELULAR  (telas maiores ajustadas no fim do CSS)
+     ========================================================= */
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:16px}
+  body{
+    background:var(--paper);color:var(--ink);
+    font-family:"Montserrat",system-ui,sans-serif;line-height:1.55;
+    min-height:100vh;min-height:100dvh;overflow-x:hidden;position:relative;
+    -webkit-tap-highlight-color:transparent;
+  }
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:
+      radial-gradient(ellipse at 20% 10%, rgba(255,255,255,.9), transparent 60%),
+      radial-gradient(ellipse at 80% 90%, rgba(11,42,94,.05), transparent 55%);
+  }
+  button,input,textarea{font:inherit;color:inherit}
+  button{-webkit-appearance:none;appearance:none}
+
+  /* ondas dos cantos */
+  .corner{position:absolute;width:44vw;max-width:340px;pointer-events:none;z-index:3}
+  .corner.tl{top:0;left:0}
+  .corner.br{bottom:0;right:0;transform:rotate(180deg)}
+
+  .page{position:relative;z-index:2;width:100%;max-width:640px;margin:0 auto;padding:44px 14px calc(96px + var(--safe-b))}
+  .frame{
+    border:1px solid var(--line);
+    outline:1px solid var(--line);outline-offset:5px;
+    background:rgba(255,255,255,.6);
+    padding:36px 18px 40px;
+  }
+
+  /* ---------- cabeçalho ---------- */
+  .hero{text-align:center}
+  .seal{width:128px;height:128px;margin:0 auto 16px;display:block}
+  .kicker{font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;font-weight:500;margin-bottom:4px;padding-left:.34em}
+  .title{font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:clamp(1.9rem,9.6vw,3.6rem);line-height:1.02;letter-spacing:.01em}
+  .ten{
+    position:relative;display:inline-block;margin:4px 0 2px;
+    font-family:"Playfair Display",Georgia,serif;font-weight:800;
+    font-size:clamp(6.4rem,34vw,11.5rem);line-height:.95;letter-spacing:-.04em;
+    background:linear-gradient(160deg,#2A5BAA 0%,var(--navy) 38%,var(--navy-deep) 70%,#234C92 100%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    filter:drop-shadow(0 6px 10px rgba(6,27,64,.18));
+  }
+  .ten .anos{
+    position:absolute;right:-.5em;bottom:.18em;
+    font-family:"Great Vibes",cursive;font-weight:400;letter-spacing:0;font-size:.42em;
+    background:linear-gradient(100deg,#A9793A,var(--gold-light) 45%,var(--gold) 70%,#9C6F33);
+    -webkit-background-clip:text;background-clip:text;color:transparent;transform:rotate(-8deg);
+  }
+  .lab-row{display:flex;align-items:center;gap:12px;justify-content:center;margin-top:14px}
+  .lab-row::before,.lab-row::after{content:"";flex:1;max-width:70px;height:1px;background:var(--navy)}
+  .lab{font-size:.72rem;letter-spacing:.34em;text-transform:uppercase;font-weight:500;padding-left:.34em}
+  .name{font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:clamp(1.75rem,8.4vw,3rem);line-height:1.1;margin-top:2px}
+  .diamond{display:flex;align-items:center;gap:12px;justify-content:center;margin:12px 0 16px}
+  .diamond::before,.diamond::after{content:"";width:30%;max-width:150px;height:1px;background:var(--line)}
+  .diamond span{width:8px;height:8px;border:1.5px solid var(--navy);transform:rotate(45deg)}
+  .lead{font-size:1rem;color:var(--navy-soft);max-width:28ch;margin:0 auto}
+  .script{font-family:"Great Vibes",cursive;color:var(--navy);font-size:clamp(1.9rem,8.8vw,2.6rem);line-height:1.2;margin-top:10px}
+  .swash{display:block;width:170px;height:8px;margin:-2px auto 0}
+
+  /* ---------- contagem ---------- */
+  .countdown{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:30px 0 6px}
+  .cd{text-align:center;padding:10px 2px 8px;border:1px solid var(--line);background:var(--card)}
+  .cd b{display:block;font-family:"Playfair Display",Georgia,serif;font-size:1.55rem;line-height:1;font-variant-numeric:tabular-nums}
+  .cd small{font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+  .cd-done{grid-column:1/-1;font-family:"Great Vibes",cursive;font-size:2rem;text-align:center}
+
+  /* ---------- data / hora / local ---------- */
+  .details{display:grid;grid-template-columns:1fr 1fr 1.25fr;margin:28px 0 4px}
+  .detail{text-align:center;padding:2px 4px;display:flex;flex-direction:column;align-items:center;gap:5px}
+  .detail + .detail{border-left:1px solid var(--navy)}
+  .detail svg{width:28px;height:28px;stroke:var(--navy);fill:none;stroke-width:1.6}
+  .detail .lbl{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600}
+  .detail .val{font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:1.3rem;line-height:1.1}
+  .detail .val.sm{font-family:"Montserrat",sans-serif;font-weight:500;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;line-height:1.4}
+  .detail a{color:inherit;text-decoration:none;border-bottom:1px solid var(--gold)}
+  .actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:20px}
+  .ghost{
+    display:flex;align-items:center;justify-content:center;gap:7px;min-height:48px;padding:8px 10px;
+    font:600 .66rem/1.2 "Montserrat",sans-serif;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--navy);background:var(--card);border:1px solid var(--navy);text-decoration:none;cursor:pointer;
+    transition:background .2s,color .2s;
+  }
+  .ghost:active{background:var(--navy);color:#fff}
+  .ghost svg{flex:none;width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8}
+
+  /* ---------- títulos de seção ---------- */
+  .section-title{display:flex;align-items:center;gap:12px;justify-content:center;margin:38px 0 18px}
+  .section-title::before,.section-title::after{content:"";flex:1;max-width:100px;height:1px;background:var(--navy)}
+  .section-title h2{font:600 .74rem/1 "Montserrat",sans-serif;letter-spacing:.36em;text-transform:uppercase;padding-left:.36em;white-space:nowrap}
+
+  /* ---------- dress code ---------- */
+  .dress{display:grid;gap:10px}
+  .dress-card{background:var(--card);border:1px solid var(--line);padding:16px 14px;display:flex;gap:14px;align-items:center}
+  .dress-card svg.icon{flex:none;width:34px;height:42px;stroke:var(--navy);fill:none;stroke-width:1.5}
+  .dress-card h3{font:600 .74rem/1.3 "Montserrat",sans-serif;letter-spacing:.1em;text-transform:uppercase}
+  .dress-card p{font-size:.84rem;color:var(--muted);font-style:italic}
+  .swatches{display:flex;gap:6px;margin-top:8px}
+  .swatches i{width:24px;height:24px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px var(--line)}
+
+  /* ---------- formulário ---------- */
+  .rsvp-intro{text-align:center;color:var(--navy-soft);font-size:.95rem;margin-bottom:18px}
+  .rsvp-intro strong{color:var(--navy)}
+  form{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
+  .field,.person,.yes-block,.companions{min-width:0}
+  .field > label,.field > .label{display:block;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;margin-bottom:7px}
+  .opt{font-weight:400;letter-spacing:.04em;text-transform:none;color:var(--muted)}
+  input[type=text],input[type=tel],textarea{
+    width:100%;min-height:50px;padding:12px 14px;font-size:16px;line-height:1.4; /* 16px evita zoom no iPhone */
+    background:var(--card);border:1px solid var(--line);border-radius:0;-webkit-appearance:none;appearance:none;
+    transition:border-color .2s, box-shadow .2s;
+  }
+  textarea{min-height:96px;resize:vertical}
+  input:focus,textarea:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(11,42,94,.1)}
+  input::placeholder,textarea::placeholder{color:#9AA6BD}
+  .invalid > input,input.invalid{border-color:var(--error)}
+  .err{display:none;color:var(--error);font-size:.78rem;margin-top:6px}
+  .invalid > .err,.invalid .err.own{display:block}
+
+  .choice{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .choice input{position:absolute;opacity:0;pointer-events:none}
+  .choice label{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center;
+    min-height:80px;padding:12px 6px;cursor:pointer;background:var(--card);border:1px solid var(--line);
+    font-weight:500;font-size:.88rem;line-height:1.25;transition:all .2s;
+  }
+  .choice label span{font-family:"Great Vibes",cursive;font-size:1.5rem;line-height:1;color:var(--gold)}
+  .choice input:checked + label{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .choice input:checked + label span{color:var(--gold-light)}
+  .choice input:focus-visible + label{box-shadow:0 0 0 3px rgba(11,42,94,.25)}
+  .invalid .choice label{border-color:var(--error)}
+
+  .yes-block{display:grid;grid-template-columns:minmax(0,1fr);gap:20px}
+  .yes-block[hidden]{display:none}
+
+  /* ---------- brinde: chinelo ---------- */
+  .gift{
+    position:relative;overflow:hidden;text-align:center;color:#fff;
+    background:
+      radial-gradient(circle at 85% 0%, rgba(230,200,130,.28), transparent 45%),
+      linear-gradient(150deg,var(--navy-soft),var(--navy) 45%,var(--navy-deep));
+    padding:22px 18px 20px;
+  }
+  .gift::before{content:"";position:absolute;inset:6px;border:1px solid rgba(230,200,130,.45);pointer-events:none}
+  .gift svg{width:112px;height:auto;display:block;margin:0 auto 4px;filter:drop-shadow(0 8px 10px rgba(0,0,0,.25))}
+  .gift .tag{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-light);font-weight:600;padding-left:.3em}
+  .gift h3{font-family:"Great Vibes",cursive;font-weight:400;font-size:2.1rem;line-height:1.1;color:#fff;margin:2px 0 4px}
+  .gift p{font-size:.88rem;color:rgba(255,255,255,.85);max-width:30ch;margin:0 auto}
+
+  .person{background:var(--card);border:1px solid var(--line);padding:14px 0 12px}
+  .person.invalid{border-color:var(--error)}
+  .person-head{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 14px 10px}
+  .person-head .who{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600}
+  .person-head .picked{
+    font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:.95rem;color:var(--muted);white-space:nowrap;
+  }
+  .person-head .picked.on{color:var(--navy)}
+  .person .name-in{margin:0 14px 12px;width:calc(100% - 28px)}
+  .person .sub{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:0 14px 6px}
+  .person .err{padding:0 14px}
+
+  .sizes{
+    display:flex;gap:8px;overflow-x:auto;padding:6px 14px 10px;
+    scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 18px,#000 calc(100% - 18px),transparent 100%);
+            mask-image:linear-gradient(90deg,transparent 0,#000 18px,#000 calc(100% - 18px),transparent 100%);
+  }
+  .sizes::-webkit-scrollbar{display:none}
+  .sizes input{position:absolute;opacity:0;pointer-events:none}
+  .sizes label{
+    flex:none;scroll-snap-align:center;width:50px;height:50px;border-radius:50%;
+    display:grid;place-items:center;cursor:pointer;user-select:none;
+    font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:1.1rem;
+    border:1px solid var(--line);background:var(--paper);color:var(--navy);
+    transition:transform .15s, background .2s, color .2s, box-shadow .2s;
+  }
+  .sizes input:checked + label{
+    background:var(--navy);color:#fff;border-color:var(--navy);transform:scale(1.08);
+    box-shadow:0 0 0 3px var(--card),0 0 0 4.5px var(--gold);
+  }
+  .sizes input:focus-visible + label{box-shadow:0 0 0 3px rgba(11,42,94,.3)}
+  .swipe{font-size:.72rem;color:var(--muted);text-align:center;margin-top:-10px}
+
+  .stepper-row{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--card);border:1px solid var(--line);padding:10px 10px 10px 14px}
+  .stepper-row .txt b{display:block;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600}
+  .stepper-row .txt small{font-size:.78rem;color:var(--muted)}
+  .stepper{display:flex;align-items:center;border:1px solid var(--line)}
+  .stepper button{width:44px;height:44px;border:0;background:transparent;color:var(--navy);font-size:1.4rem;cursor:pointer}
+  .stepper button:disabled{opacity:.3;cursor:default}
+  .stepper output{min-width:34px;text-align:center;font-family:"Playfair Display",Georgia,serif;font-size:1.3rem;font-weight:700}
+  .companions{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+  .companions:empty{display:none}
+
+  .submit{
+    position:relative;width:100%;min-height:58px;border:0;cursor:pointer;
+    font:600 .82rem/1 "Montserrat",sans-serif;letter-spacing:.26em;text-transform:uppercase;padding-left:.26em;
+    color:#fff;background:linear-gradient(135deg,var(--navy-soft),var(--navy) 50%,var(--navy-deep));
+    box-shadow:0 10px 24px -10px rgba(6,27,64,.55);transition:transform .15s, opacity .2s;
+  }
+  .submit::after{content:"";position:absolute;left:18%;right:18%;bottom:11px;height:1px;background:linear-gradient(90deg,transparent,var(--gold-light),transparent)}
+  .submit:active{transform:scale(.99)}
+  .submit:disabled{opacity:.7;cursor:wait}
+  .form-error{display:none;text-align:center;color:var(--error);font-size:.85rem}
+  .form-error.show{display:block}
+
+  /* ---------- sucesso ---------- */
+  .thanks{display:none;text-align:center;padding-top:6px}
+  .thanks.show{display:block;animation:rise .6s ease both}
+  .thanks .check{width:68px;height:68px;margin:0 auto 10px;border-radius:50%;border:1.5px solid var(--gold);display:grid;place-items:center}
+  .thanks .check svg{width:32px;height:32px;stroke:var(--navy);fill:none;stroke-width:2}
+  .thanks h3{font-family:"Great Vibes",cursive;font-weight:400;font-size:2.5rem;line-height:1.1}
+  .thanks p{color:var(--navy-soft);max-width:32ch;margin:6px auto 0}
+  .thanks .flip-summary{
+    margin:18px auto 0;max-width:320px;border:1px solid var(--line);background:var(--card);padding:12px 14px;text-align:left;
+  }
+  .flip-summary b{display:block;font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:6px;color:var(--gold)}
+  .flip-summary li{list-style:none;display:flex;justify-content:space-between;gap:10px;font-size:.9rem;padding:3px 0;border-top:1px dashed var(--line)}
+  .flip-summary li:first-of-type{border-top:0}
+  .flip-summary li span:last-child{font-family:"Playfair Display",Georgia,serif;font-weight:700}
+  .thanks .actions{max-width:320px;margin-left:auto;margin-right:auto;grid-template-columns:1fr}
+  .thanks .again{margin-top:16px;min-height:44px;background:none;border:0;color:var(--muted);font-size:.8rem;text-decoration:underline;cursor:pointer}
+
+  footer{text-align:center;margin-top:32px;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+
+  /* ---------- barra fixa (celular) ---------- */
+  .cta-bar{
+    position:fixed;left:0;right:0;bottom:0;z-index:20;
+    padding:10px 14px calc(10px + var(--safe-b));
+    background:linear-gradient(180deg,rgba(247,245,240,0),rgba(247,245,240,.96) 30%);
+    transform:translateY(110%);transition:transform .35s ease;
+  }
+  .cta-bar.show{transform:none}
+  .cta-bar a{
+    display:flex;align-items:center;justify-content:center;min-height:54px;max-width:612px;margin:0 auto;
+    font:600 .8rem/1 "Montserrat",sans-serif;letter-spacing:.24em;text-transform:uppercase;padding-left:.24em;
+    color:#fff;text-decoration:none;background:linear-gradient(135deg,var(--navy-soft),var(--navy) 50%,var(--navy-deep));
+    box-shadow:0 10px 24px -8px rgba(6,27,64,.5);
+  }
+
+  /* ---------- animações ---------- */
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .8s ease, transform .8s ease}
+  .reveal.in{opacity:1;transform:none}
+  @keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  @keyframes pop{0%{transform:scale(.9);opacity:0}100%{transform:none;opacity:1}}
+  .person.new{animation:pop .3s ease both}
+  @media (prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    .thanks.show,.person.new{animation:none}
+    html{scroll-behavior:auto}
+  }
+
+  /* =========================================================
+     TELAS MAIORES
+     ========================================================= */
+  @media (hover:hover){
+    .ghost:hover{background:var(--navy);color:#fff}
+    .sizes label:hover{border-color:var(--navy)}
+  }
+  @media (min-width:420px){
+    .page{padding-left:18px;padding-right:18px}
+    .frame{padding:40px 24px 44px}
+    .detail .val.sm{font-size:.76rem;letter-spacing:.1em}
+    .ghost{font-size:.7rem;letter-spacing:.12em}
+  }
+  @media (min-width:600px){
+    .page{padding-top:72px;padding-bottom:120px}
+    .frame{padding:52px 44px 56px;outline-offset:7px}
+    .seal{width:150px;height:150px}
+    .kicker,.lab{font-size:.8rem;letter-spacing:.42em;padding-left:.42em}
+    .ten .anos{right:-.62em}
+    .countdown{gap:10px}
+    .cd b{font-size:1.8rem}
+    .details{grid-template-columns:repeat(3,1fr)}
+    .detail .val{font-size:1.6rem}
+    .actions{display:flex;justify-content:center}
+    .ghost{padding:8px 18px}
+    .dress{grid-template-columns:1fr 1fr}
+    .gift{display:grid;grid-template-columns:130px 1fr;align-items:center;gap:12px;text-align:left;padding:24px 26px}
+    .gift svg{margin:0}
+    .gift p{margin:0}
+    .sizes{flex-wrap:wrap;overflow:visible;-webkit-mask-image:none;mask-image:none}
+    .swipe{display:none}
+  }
+  @media (min-width:900px){
+    .cta-bar{display:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- Ondas decorativas -->
+<svg class="corner tl" viewBox="0 0 360 260" aria-hidden="true">
+  <defs>
+    <linearGradient id="wv1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#061B40"/><stop offset=".6" stop-color="#153E86"/><stop offset="1" stop-color="#0B2A5E"/></linearGradient>
+    <linearGradient id="wv2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9C6F33"/><stop offset=".5" stop-color="#E6C882"/><stop offset="1" stop-color="#C49A4A"/></linearGradient>
+  </defs>
+  <path d="M0 0H360C300 30 230 38 170 70C105 105 55 160 0 230Z" fill="url(#wv1)"/>
+  <path d="M0 205C60 140 115 95 185 64C240 40 300 22 360 4" stroke="url(#wv2)" stroke-width="4" fill="none"/>
+  <path d="M0 0H220C170 20 120 40 80 70C45 96 18 120 0 140Z" fill="#0B2A5E" opacity=".55"/>
+</svg>
+<svg class="corner br" viewBox="0 0 360 260" aria-hidden="true">
+  <path d="M0 0H360C300 30 230 38 170 70C105 105 55 160 0 230Z" fill="url(#wv1)"/>
+  <path d="M0 205C60 140 115 95 185 64C240 40 300 22 360 4" stroke="url(#wv2)" stroke-width="4" fill="none"/>
+  <path d="M0 0H220C170 20 120 40 80 70C45 96 18 120 0 140Z" fill="#0B2A5E" opacity=".55"/>
+</svg>
+
+<main class="page">
+  <div class="frame">
+
+    <!-- ===== CABEÇALHO ===== -->
+    <header class="hero reveal" id="hero">
+      <svg class="seal" viewBox="0 0 200 200" role="img" aria-label="Logo MI – Laboratório de Análises Clínicas e Exames Toxicológicos">
+        <defs><path id="ring" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0"/></defs>
+        <text font-family="Montserrat,sans-serif" font-size="11.2" font-weight="500" letter-spacing="1.6" fill="#0B2A5E">
+          <textPath href="#ring" startOffset="0%" textLength="492">LABORATÓRIO DE ANÁLISES CLÍNICAS E EXAMES TOXICOLÓGICOS •</textPath>
+        </text>
+        <circle cx="100" cy="100" r="64" fill="none" stroke="#0B2A5E" stroke-width="5"/>
+        <text x="100" y="124" text-anchor="middle" font-family="Montserrat,sans-serif" font-weight="600" font-size="66" letter-spacing="-2" fill="#0B2A5E">MI</text>
+      </svg>
+
+      <p class="kicker">Convida você para a</p>
+      <h1 class="title">COMEMORAÇÃO</h1>
+      <div class="ten" aria-label="10 anos">10<span class="anos">anos</span></div>
+
+      <div class="lab-row"><span class="lab">Laboratório</span></div>
+      <p class="name">MICAELE TANI</p>
+      <div class="diamond"><span></span></div>
+
+      <p class="lead">Será um momento especial para celebrar nossa história e brindar o futuro.</p>
+      <p class="script">Contamos com a sua presença!</p>
+      <svg class="swash" viewBox="0 0 180 8" aria-hidden="true"><path d="M2 6C50 1 120 0 178 4" stroke="url(#wv2)" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+    </header>
+
+    <!-- ===== CONTAGEM ===== -->
+    <div class="countdown reveal" id="countdown" aria-live="off">
+      <div class="cd"><b id="cd-d">--</b><small>dias</small></div>
+      <div class="cd"><b id="cd-h">--</b><small>horas</small></div>
+      <div class="cd"><b id="cd-m">--</b><small>min</small></div>
+      <div class="cd"><b id="cd-s">--</b><small>seg</small></div>
+    </div>
+
+    <!-- ===== DATA / HORA / LOCAL ===== -->
+    <section class="reveal" aria-label="Quando e onde">
+      <div class="details">
+        <div class="detail">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4"/><path d="M7.5 13h.01M12 13h.01M16.5 13h.01M7.5 16.5h.01M12 16.5h.01M16.5 16.5h.01" stroke-width="2.4" stroke-linecap="round"/></svg>
+          <span class="lbl">Sábado</span>
+          <span class="val">07/11</span>
+        </div>
+        <div class="detail">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <span class="lbl">Horário</span>
+          <span class="val">19h</span>
+        </div>
+        <div class="detail">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          <span class="lbl">Local</span>
+          <span class="val sm"><a id="maps-link" href="#" target="_blank" rel="noopener">Salão Mãos Amigas</a></span>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="ghost cal-link" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4M12 12.5v5M9.5 15h5"/></svg>
+          Salvar na agenda
+        </a>
+        <a class="ghost" id="maps-btn" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+          Como chegar
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== DRESS CODE ===== -->
+    <section class="reveal" aria-labelledby="dc-title">
+      <div class="section-title"><h2 id="dc-title">Dress code</h2></div>
+      <div class="dress">
+        <div class="dress-card">
+          <svg class="icon" viewBox="0 0 38 46" aria-hidden="true"><path d="M14 2v6l-3 6 4 4-9 24h26l-9-24 4-4-3-6V2"/><path d="M14 8h10"/></svg>
+          <div>
+            <h3>Camisa ou vestido</h3>
+            <p>Tons de azul</p>
+            <div class="swatches" role="img" aria-label="Paleta de azuis">
+              <i style="background:var(--blue-1)"></i><i style="background:var(--blue-2)"></i><i style="background:var(--blue-3)"></i><i style="background:var(--blue-4)"></i>
+            </div>
+          </div>
+        </div>
+        <div class="dress-card">
+          <svg class="icon" viewBox="0 0 38 46" aria-hidden="true"><path d="M8 2h22l2 42h-9L19 16l-4 28H6z"/><path d="M8 7h22M19 7v9"/></svg>
+          <div>
+            <h3>Calça masculina</h3>
+            <p>Tons de areia</p>
+            <div class="swatches" role="img" aria-label="Paleta de tons areia">
+              <i style="background:var(--sand-1)"></i><i style="background:var(--sand-2)"></i><i style="background:var(--sand-3)"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONFIRMAÇÃO ===== -->
+    <section class="reveal" id="confirmar" aria-labelledby="rsvp-title">
+      <div class="section-title"><h2 id="rsvp-title">Confirme</h2></div>
+      <p class="rsvp-intro" id="rsvp-intro">Por favor, confirme sua presença<span id="deadline-text"></span>.</p>
+
+      <form id="rsvp-form" novalidate>
+        <div class="field" id="f-nome">
+          <label for="nome">Nome completo</label>
+          <input type="text" id="nome" name="nome" autocomplete="name" autocapitalize="words" enterkeyhint="next" placeholder="Seu nome e sobrenome" maxlength="120">
+          <div class="err">Por favor, informe seu nome.</div>
+        </div>
+
+        <div class="field" id="f-tel">
+          <label for="whatsapp">WhatsApp <span class="opt">(opcional)</span></label>
+          <input type="tel" id="whatsapp" name="whatsapp" autocomplete="tel-national" inputmode="numeric" enterkeyhint="done" placeholder="(00) 00000-0000" maxlength="16">
+          <div class="err">Confira o número, por favor.</div>
+        </div>
+
+        <div class="field" id="f-presenca">
+          <span class="label" id="presenca-lbl">Você poderá comparecer?</span>
+          <div class="choice" role="radiogroup" aria-labelledby="presenca-lbl">
+            <input type="radio" name="presenca" id="p-sim" value="Sim">
+            <label for="p-sim"><span>Sim!</span>Estarei presente</label>
+            <input type="radio" name="presenca" id="p-nao" value="Não">
+            <label for="p-nao"><span>Que pena…</span>Não poderei ir</label>
+          </div>
+          <div class="err">Escolha uma das opções.</div>
+        </div>
+
+        <!-- Só aparece para quem vai -->
+        <div class="yes-block" id="yes-block" hidden>
+
+          <div class="gift">
+            <svg viewBox="0 0 120 92" aria-hidden="true">
+              <defs>
+                <linearGradient id="sole" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E4D3BF"/><stop offset="1" stop-color="#C9AB80"/></linearGradient>
+                <linearGradient id="strap" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9C6F33"/><stop offset=".5" stop-color="#E6C882"/><stop offset="1" stop-color="#C49A4A"/></linearGradient>
+              </defs>
+              <g transform="translate(14 6) rotate(-10 22 40)">
+                <path d="M22 2C34 2 39 13 38 26C37 36 35 42 35 52C35 66 31 78 22 78C13 78 9 66 9 52C9 42 7 36 6 26C5 13 10 2 22 2Z" fill="url(#sole)" stroke="#fff" stroke-opacity=".6"/>
+                <path d="M22 17C17 22 12 30 9 40M22 17C27 22 32 30 35 40" stroke="url(#strap)" stroke-width="5" fill="none" stroke-linecap="round"/>
+                <circle cx="22" cy="17" r="3.2" fill="#fff"/>
+              </g>
+              <g transform="translate(62 10) rotate(10 22 40)">
+                <path d="M22 2C34 2 39 13 38 26C37 36 35 42 35 52C35 66 31 78 22 78C13 78 9 66 9 52C9 42 7 36 6 26C5 13 10 2 22 2Z" fill="url(#sole)" stroke="#fff" stroke-opacity=".6"/>
+                <path d="M22 17C17 22 12 30 9 40M22 17C27 22 32 30 35 40" stroke="url(#strap)" stroke-width="5" fill="none" stroke-linecap="round"/>
+                <circle cx="22" cy="17" r="3.2" fill="#fff"/>
+              </g>
+            </svg>
+            <div>
+              <span class="tag">Brinde especial</span>
+              <h3>Um mimo para você!</h3>
+              <p>Cada convidado vai ganhar um chinelo de presente. Escolha o número do calçado para prepararmos o seu.</p>
+            </div>
+          </div>
+
+          <!-- número do convidado -->
+          <div class="person" id="p-self">
+            <div class="person-head">
+              <span class="who">Seu número</span>
+              <span class="picked" data-picked>Escolha abaixo</span>
+            </div>
+            <div class="sizes" role="radiogroup" aria-label="Número do seu calçado" data-sizes="self"></div>
+            <div class="err own">Escolha o número do seu calçado.</div>
+          </div>
+          <p class="swipe" aria-hidden="true">← arraste para ver mais números →</p>
+
+          <!-- acompanhantes -->
+          <div class="stepper-row">
+            <div class="txt">
+              <b>Acompanhantes</b>
+              <small id="acomp-hint">Além de você</small>
+            </div>
+            <div class="stepper">
+              <button type="button" id="minus" aria-label="Remover acompanhante">−</button>
+              <output id="acomp-out" aria-live="polite">0</output>
+              <button type="button" id="plus" aria-label="Adicionar acompanhante">+</button>
+            </div>
+          </div>
+          <div class="companions" id="companions"></div>
+        </div>
+
+        <div class="field">
+          <label for="recado">Recado <span class="opt">(opcional)</span></label>
+          <textarea id="recado" name="recado" maxlength="600" placeholder="Deixe uma mensagem para o laboratório"></textarea>
+        </div>
+
+        <input type="text" name="website" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+
+        <button class="submit" type="submit" id="submit">Confirmar</button>
+        <p class="form-error" id="form-error">Não foi possível enviar agora. Verifique sua conexão e tente de novo.</p>
+      </form>
+
+      <div class="thanks" id="thanks" role="status">
+        <div class="check"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+        <h3 id="thanks-title">Presença confirmada!</h3>
+        <p id="thanks-text"></p>
+        <ul class="flip-summary" id="flip-summary"></ul>
+        <div class="actions" id="thanks-actions">
+          <a class="ghost cal-link" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4M12 12.5v5M9.5 15h5"/></svg>
+            Salvar na agenda
+          </a>
+        </div>
+        <button class="again" id="again" type="button">Enviar outra resposta</button>
+      </div>
+    </section>
+
+    <footer>Laboratório Micaele Tani · 10 anos</footer>
+  </div>
+</main>
+
+<div class="cta-bar" id="cta-bar"><a href="#confirmar">Confirmar presença</a></div>
+
+<script>
+/* =========================================================
+   CONFIGURAÇÃO — edite aqui
+   ========================================================= */
+const CONFIG = {
+  // Cole aqui a URL do Apps Script (termina em /exec).
+  SCRIPT_URL: "https://script.google.com/macros/s/AKfycbzUTzGtBTs-7CGZ6EF2kR4kYuRUJuM2gj87k0KPdw77XhacuY2BLtum31HTlKK1Gvjuzg/exec",
+  EVENT_START: "2026-11-07T19:00:00-03:00",
+  EVENT_END:   "2026-11-08T00:00:00-03:00",
+  EVENT_TITLE: "Comemoração 10 anos – Laboratório Micaele Tani",
+  // Endereço completo para o "Como chegar" e a agenda
+  LOCATION: "Salão Mãos Amigas",
+  // Link do Google Maps usado no "Como chegar"
+  MAPS_URL: "https://maps.app.goo.gl/Uuhe4vfLBHUf5MuN7",
+  // Prazo para confirmar (deixe "" para não mostrar). Ex.: "31/10"
+  DEADLINE: "",
+  MAX_COMPANIONS: 5,
+  // Números de calçado disponíveis no seletor
+  SIZE_MIN: 25,
+  SIZE_MAX: 46
+};
+/* ========================================================= */
+
+(function(){
+  const $ = s => document.querySelector(s);
+  const $$ = s => [...document.querySelectorAll(s)];
+
+  /* ---- links de mapa e agenda ---- */
+  const mapsUrl = CONFIG.MAPS_URL || ("https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(CONFIG.LOCATION));
+  $("#maps-link").href = mapsUrl; $("#maps-btn").href = mapsUrl;
+  const fmt = d => new Date(d).toISOString().replace(/[-:]/g,"").replace(/\.\d{3}/,"");
+  const calUrl = "https://calendar.google.com/calendar/render?action=TEMPLATE"
+    + "&text=" + encodeURIComponent(CONFIG.EVENT_TITLE)
+    + "&dates=" + fmt(CONFIG.EVENT_START) + "/" + fmt(CONFIG.EVENT_END)
+    + "&location=" + encodeURIComponent(CONFIG.LOCATION)
+    + "&details=" + encodeURIComponent("Como chegar: " + (CONFIG.MAPS_URL || "") + "\n\nDress code: camisa ou vestido em tons de azul; calça masculina em tons de areia.");
+  $$(".cal-link").forEach(a => a.href = calUrl);
+  if (CONFIG.DEADLINE) $("#deadline-text").innerHTML = " até <strong>" + CONFIG.DEADLINE + "</strong>";
+
+  /* ---- contagem regressiva ---- */
+  const target = new Date(CONFIG.EVENT_START).getTime();
+  const pad = n => String(n).padStart(2,"0");
+  let timer;
+  function tick(){
+    let diff = target - Date.now();
+    if (diff <= 0){
+      $("#countdown").innerHTML = '<p class="cd-done">' + (Date.now() < new Date(CONFIG.EVENT_END).getTime() ? "É hoje!" : "Obrigado por celebrar conosco!") + "</p>";
+      clearInterval(timer); return;
+    }
+    const d = Math.floor(diff/864e5); diff -= d*864e5;
+    const h = Math.floor(diff/36e5);  diff -= h*36e5;
+    const m = Math.floor(diff/6e4);   diff -= m*6e4;
+    const s = Math.floor(diff/1e3);
+    $("#cd-d").textContent = d; $("#cd-h").textContent = pad(h);
+    $("#cd-m").textContent = pad(m); $("#cd-s").textContent = pad(s);
+  }
+  timer = setInterval(tick, 1000); tick();
+
+  /* ---- animação de entrada ---- */
+  const hasIO = "IntersectionObserver" in window;
+  if (hasIO){
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); }
+    }), {threshold:.1});
+    $$(".reveal").forEach(el => io.observe(el));
+  } else $$(".reveal").forEach(el => el.classList.add("in"));
+
+  /* ---- barra fixa "Confirmar presença" ---- */
+  const cta = $("#cta-bar");
+  let heroVisible = true, rsvpVisible = false, done = false;
+  const updateCta = () => cta.classList.toggle("show", !heroVisible && !rsvpVisible && !done);
+  if (hasIO){
+    new IntersectionObserver(([e]) => { heroVisible = e.isIntersecting; updateCta(); }).observe($("#hero"));
+    new IntersectionObserver(([e]) => { rsvpVisible = e.isIntersecting; updateCta(); }, {rootMargin:"0px 0px -35% 0px"}).observe($("#confirmar"));
+  }
+
+  /* ---- máscara de telefone ---- */
+  const tel = $("#whatsapp");
+  tel.addEventListener("input", () => {
+    let v = tel.value.replace(/\D/g,"").slice(0,11);
+    if (v.length > 10) v = v.replace(/^(\d{2})(\d{5})(\d{0,4}).*/,"($1) $2-$3");
+    else if (v.length > 6) v = v.replace(/^(\d{2})(\d{4})(\d{0,4}).*/,"($1) $2-$3");
+    else if (v.length > 2) v = v.replace(/^(\d{2})(\d{0,5})/,"($1) $2");
+    else if (v.length) v = v.replace(/^(\d*)/,"($1");
+    tel.value = v;
+    $("#f-tel").classList.remove("invalid");
+  });
+
+  /* ---- seletor de número de calçado ---- */
+  let uid = 0;
+  function buildSizes(container, key){
+    const group = "size-" + key + "-" + (uid++);
+    let html = "";
+    for (let n = CONFIG.SIZE_MIN; n <= CONFIG.SIZE_MAX; n++){
+      const id = group + "-" + n;
+      html += '<input type="radio" name="' + group + '" id="' + id + '" value="' + n + '"><label for="' + id + '">' + n + '</label>';
+    }
+    container.innerHTML = html;
+    const person = container.closest(".person");
+    container.addEventListener("change", e => {
+      const p = person.querySelector("[data-picked]");
+      p.textContent = "Nº " + e.target.value; p.classList.add("on");
+      person.classList.remove("invalid");
+      e.target.nextElementSibling.scrollIntoView({behavior:"smooth", block:"nearest", inline:"center"});
+    });
+    // começa mostrando a faixa do meio (≈ 35–39)
+    requestAnimationFrame(() => {
+      const mid = container.querySelector('label[for="' + group + '-35"]');
+      if (mid && container.scrollWidth > container.clientWidth) container.scrollLeft = mid.offsetLeft - 20;
+    });
+  }
+  const getSize = person => (person.querySelector(".sizes input:checked") || {}).value || "";
+  const selfBox = $("#p-self");
+
+  /* ---- presença ---- */
+  const yesBlock = $("#yes-block");
+  let sizesReady = false;
+  $$('input[name="presenca"]').forEach(r => r.addEventListener("change", () => {
+    const vai = $("#p-sim").checked;
+    yesBlock.hidden = !vai;
+    $("#f-presenca").classList.remove("invalid");
+    if (vai && !sizesReady){ buildSizes(selfBox.querySelector(".sizes"), "self"); sizesReady = true; }
+  }));
+
+  /* ---- acompanhantes ---- */
+  let acomp = 0;
+  const box = $("#companions");
+  function companionCard(i){
+    const el = document.createElement("div");
+    el.className = "person new";
+    el.innerHTML =
+      '<div class="person-head"><span class="who">Acompanhante ' + (i+1) + '</span><span class="picked" data-picked>—</span></div>' +
+      '<input type="text" class="name-in" maxlength="120" autocapitalize="words" placeholder="Nome do acompanhante" aria-label="Nome do acompanhante ' + (i+1) + '">' +
+      '<div class="sub">Número do calçado</div>' +
+      '<div class="sizes" role="radiogroup" aria-label="Número do calçado do acompanhante ' + (i+1) + '"></div>' +
+      '<div class="err own">Informe o nome e o número.</div>';
+    buildSizes(el.querySelector(".sizes"), "c" + i);
+    el.querySelector(".name-in").addEventListener("input", ev => { ev.target.classList.remove("invalid"); el.classList.remove("invalid"); });
+    return el;
+  }
+  function renderAcomp(){
+    $("#acomp-out").textContent = acomp;
+    $("#minus").disabled = acomp === 0;
+    $("#plus").disabled = acomp >= CONFIG.MAX_COMPANIONS;
+    $("#acomp-hint").textContent = acomp ? "Total: " + (acomp+1) + " pessoas com você" : "Além de você";
+    while (box.children.length > acomp) box.lastElementChild.remove();
+    while (box.children.length < acomp){
+      const card = companionCard(box.children.length);
+      box.appendChild(card);
+      card.querySelector(".name-in").focus({preventScroll:true});
+      card.scrollIntoView({behavior:"smooth", block:"nearest"});
+    }
+  }
+  $("#minus").onclick = () => { if (acomp > 0){ acomp--; renderAcomp(); } };
+  $("#plus").onclick  = () => { if (acomp < CONFIG.MAX_COMPANIONS){ acomp++; renderAcomp(); } };
+  renderAcomp();
+
+  $("#nome").addEventListener("input", () => $("#f-nome").classList.remove("invalid"));
+
+  /* ---- envio ---- */
+  const form = $("#rsvp-form"), btn = $("#submit");
+  form.addEventListener("submit", async ev => {
+    ev.preventDefault();
+    $("#form-error").classList.remove("show");
+    if (form.website.value) return;
+
+    const nome = $("#nome").value.trim();
+    const presenca = (form.querySelector('input[name="presenca"]:checked') || {}).value;
+    const vai = presenca === "Sim";
+    const telDigits = tel.value.replace(/\D/g,"");
+    let firstBad = null;
+    const bad = (el, focusEl) => { el.classList.add("invalid"); firstBad = firstBad || focusEl || el; };
+
+    if (!nome) bad($("#f-nome"), $("#nome"));
+    if (telDigits && telDigits.length < 10) bad($("#f-tel"), tel);
+    if (!presenca) bad($("#f-presenca"));
+
+    const pessoas = [];
+    if (vai){
+      const n = getSize(selfBox);
+      if (!n) bad(selfBox);
+      pessoas.push({ nome: nome || "Convidado", tipo: "Convidado", numero: n });
+      [...box.children].forEach((card, i) => {
+        const nameIn = card.querySelector(".name-in");
+        const cn = nameIn.value.trim(), cs = getSize(card);
+        if (!cn){ nameIn.classList.add("invalid"); }
+        if (!cn || !cs) bad(card, !cn ? nameIn : card);
+        pessoas.push({ nome: cn, tipo: "Acompanhante de " + nome, numero: cs });
+      });
+    }
+    if (firstBad){
+      firstBad.scrollIntoView({behavior:"smooth", block:"center"});
+      if (firstBad.focus && /INPUT|TEXTAREA/.test(firstBad.tagName)) setTimeout(() => firstBad.focus({preventScroll:true}), 300);
+      return;
+    }
+
+    const acompList = pessoas.slice(1);
+    const data = new URLSearchParams({
+      nome, whatsapp: tel.value, presenca,
+      calcado: vai ? pessoas[0].numero : "",
+      acompanhantes: acompList.length,
+      acompanhantes_detalhe: acompList.map(p => p.nome + " (nº " + p.numero + ")").join(", "),
+      total: vai ? pessoas.length : 0,
+      recado: $("#recado").value.trim(),
+      pessoas: JSON.stringify(vai ? pessoas : [])
+    });
+
+    btn.disabled = true; btn.textContent = "Enviando…";
+    try{
+      if (!CONFIG.SCRIPT_URL){
+        console.warn("SCRIPT_URL não configurada — resposta NÃO foi salva:", Object.fromEntries(data));
+        await new Promise(r => setTimeout(r, 600));
+      } else {
+        await fetch(CONFIG.SCRIPT_URL, { method:"POST", mode:"no-cors", body:data });
+      }
+      showThanks(vai, nome, pessoas);
+    } catch(e){
+      $("#form-error").classList.add("show");
+    } finally {
+      btn.disabled = false; btn.textContent = "Confirmar";
+    }
+  });
+
+  function esc(s){ return String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c])); }
+
+  function showThanks(vai, nome, pessoas){
+    const first = nome.split(" ")[0];
+    $("#thanks-title").textContent = vai ? "Presença confirmada!" : "Resposta recebida";
+    $("#thanks-text").textContent = vai
+      ? "Obrigado, " + first + "! Estamos muito felizes em celebrar esse momento com você."
+      : "Obrigado por avisar, " + first + ". Sentiremos sua falta!";
+    const sum = $("#flip-summary");
+    if (vai){
+      sum.innerHTML = "<b>Seus chinelos</b>" + pessoas.map((p, i) =>
+        "<li><span>" + esc(i === 0 ? "Você" : p.nome) + "</span><span>nº " + esc(p.numero) + "</span></li>").join("");
+      sum.style.display = "";
+    } else sum.style.display = "none";
+    $("#thanks-actions").style.display = vai ? "" : "none";
+    form.style.display = "none"; $("#rsvp-intro").style.display = "none";
+    $("#thanks").classList.add("show");
+    done = true; updateCta();
+    $("#confirmar").scrollIntoView({behavior:"smooth", block:"start"});
+  }
+
+  $("#again").onclick = () => {
+    form.reset(); acomp = 0; box.innerHTML = ""; renderAcomp();
+    yesBlock.hidden = true; sizesReady = false;
+    selfBox.querySelector(".sizes").innerHTML = "";
+    const p = selfBox.querySelector("[data-picked]"); p.textContent = "Escolha abaixo"; p.classList.remove("on");
+    $$(".invalid").forEach(el => el.classList.remove("invalid"));
+    $("#thanks").classList.remove("show");
+    form.style.display = ""; $("#rsvp-intro").style.display = "";
+    done = false; updateCta();
+    $("#nome").focus();
+  };
+})();
+</script>
+</body>
+</html>
